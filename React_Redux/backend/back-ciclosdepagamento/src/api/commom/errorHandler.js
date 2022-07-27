@@ -1,5 +1,5 @@
 const _ = require('lodash')
-const nodeRestful = require('node-restful')
+
 
 module.exports = (req, res, next) => {
     const bundle = res.locals.bundle

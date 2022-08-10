@@ -1,18 +1,20 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import { applyMiddleware, createStore } from 'redux';
-import { Provider } from 'react-redux';
+import React from 'react'
+import ReactDOM from 'react-dom'
+import { applyMiddleware, createStore } from 'redux'
+import { Provider } from 'react-redux'
 
-import promise from 'redux-promise';
+import promise from 'redux-promise'
+import multi from 'redux-multi'
+import thunk from 'redux-thunk'
 
-import App from './main/app';
+import Routes from './main/routes'
 import reducers from './main/reducers'
 
-const devTolls = window._REDUX_DEVTOOLS_EXTENSION_
-      && window._REDUX_DEVTOOLS_EXTENSION_()
-const store = applyMiddleware(promise)(createStore)(reducers, devTolls)
+const devTools = window.__REDUX_DEVTOOLS_EXTENSION__ 
+      && window.__REDUX_DEVTOOLS_EXTENSION__()
+const store = applyMiddleware(multi, thunk, promise)(createStore)(reducers, devTools)
 ReactDOM.render(
     <Provider store={store}>
-     <App />
-    </Provider> 
-, document.getElementById('app'));
+        <Routes />
+    </Provider>
+, document.getElementById('app'))

@@ -10,7 +10,7 @@ export default function Home() {
         <Name>Olá, sou Michael Platini</Name>
         <Function>FullStack Developer</Function>
         <Intro>Cursando Analise e Desenvolvimento de Sistemas
-                  desenvolvimento Web (React, JS e outros)
+                  desenvolvimento Web (React, Redux, JS e outros)
         </Intro>
         <Link href="projects">
           <LinkProjects>PROJETOS <FaArrowRight /></LinkProjects>
